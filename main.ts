@@ -242,7 +242,7 @@ class Kakona {
         color: color,
         weight: 3
       },
-      onEachFeature: (feature, layer) => {
+      onEachFeature: (_, layer) => {
         const message = isPolluted ? 'POLLUTED WATER!' : 'Safe to drink';
         layer.bindPopup(`Postcode: ${zipcode}<br/><strong>${message}</strong>`);
       }
