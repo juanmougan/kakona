@@ -1,5 +1,6 @@
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
+import config from './config.json';
 
 interface Config {
   zipcodes: string[];
@@ -312,12 +313,8 @@ class Kakona {
 // Initialize the mapper when the page loads
 document.addEventListener('DOMContentLoaded', async () => {
   try {
-    // Fetch the configuration file
-    const response = await fetch('./config.json');
-    const config: Config = await response.json();
-
-    // Create the mapper instance
-    const mapper = new Kakona(config);
+    // Create the mapper instance with imported config
+    const mapper = new Kakona(config as Config);
 
     // Plot all zipcodes
     await mapper.plotAllZipcodes();
