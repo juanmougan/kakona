@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  base: './', // Use relative paths for assets
+  base: '/kakona/', // GitHub Pages serves from /username/repo-name/
 })
